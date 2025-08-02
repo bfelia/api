@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
       },
       back_url: "https://beardhook.onrender.com",
       notification_url: "https://beardhook.onrender.com/webhook",
-      payer_email: "test_user_491019957@testuser.com", // Esto se reemplaza luego por el email real 
+      payer_email: userEmail, // Esto se reemplaza luego por el email real 
       external_reference: userId,
     };
 
