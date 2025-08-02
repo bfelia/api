@@ -3,8 +3,6 @@ const router = express.Router();
 import { MercadoPagoConfig, PreApproval } from "mercadopago";
 import { db } from "../firebase.js"; // o tu archivo donde inicializás Firebase
 
-console.log("ENV: ",process.env.ACCESS_TOKEN)
-
 export const config = new MercadoPagoConfig({
   accessToken: process.env.ACCESS_TOKEN, // o tu token directo
 });
