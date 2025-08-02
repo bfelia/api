@@ -8,10 +8,6 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
-
 const PORT = process.env.PORT || 3000
 
 app.use("/crear-suscripcion", crearSuscripcionRouter)
@@ -19,3 +15,7 @@ app.use("/crear-suscripcion", crearSuscripcionRouter)
 app.use("/webhook", webhookRouter);
 
 app.use("/validar-corte", validarCorteRouter);
+
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
