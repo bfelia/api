@@ -8,7 +8,7 @@ export const config = new MercadoPagoConfig({
   accessToken: process.env.ACCESS_TOKEN, // o tu token directo
 });
 
-router.post("/crear-suscripcion", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const preapproval = new PreApproval(config);
     const { userId, barberiaId, planId, cortesPlan, monto, userEmail, nombreUsuario } = req.body;
