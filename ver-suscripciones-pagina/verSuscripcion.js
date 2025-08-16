@@ -119,7 +119,7 @@ router.get("/", async (req, res) => {
             `
                     )
                     .join("")
-                : `<tr><td colspan="4" style="text-align:center;">No se encontraron suscripciones</td></tr>`
+                : `<tr><td colspan="4" style="text-align:center;">No se encontraron usuarios</td></tr>`
             }
           </tbody>
         </table>
