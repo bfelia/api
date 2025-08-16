@@ -102,7 +102,7 @@ router.get("/", async (req, res) => {
       <body>
         <h1>📋 Suscripciones activas</h1>
 
-        <form method="get" action="/ver-suscripciones" class="search-box">
+        <form method="get" action="/ver-suscripciones-pagina" class="search-box">
           <input type="text" name="search" placeholder="Buscar por nombre o email" value="${search || ""}" />
           <button type="submit">Buscar</button>
         </form>
