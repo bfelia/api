@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
     if (search) {
       usuarios = usuarios.filter(s =>
-        s.email.toLowerCase().includes(search.toLowerCase())
+        s.email.split("%40").join("@").toLowerCase().includes(search.toLowerCase())
       );
     }
 
@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
         ${usuarios
           .map(
             s =>
-              `<li>${s.nombre} - ${s.planActivo?"Plan Activo":"Sin Plan"} - ${s.email}</li>`
+              `<li>${s.nombre} - ${s.planActivo?"Plan Activo":"Sin Plan"} - ${s.email.split("%40").join("@")}</li>`
           )
           .join("")}
       </ul>
