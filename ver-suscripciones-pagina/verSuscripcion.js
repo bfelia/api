@@ -105,8 +105,8 @@ router.get("/", async (req, res) => {
           </thead>
           <tbody>
             ${
-              suscripciones.length > 0
-                ? suscripciones
+              usuarios.length > 0
+                ? usuarios
                     .map(
                       (s) => `
               <tr>
