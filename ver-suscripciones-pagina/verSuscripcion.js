@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
         s.email.split("%40").join("@").toLowerCase()==search.toLowerCase()
       );
     } else {
-      usuarios = null
+      usuarios = []
     }
 
     const html = `
