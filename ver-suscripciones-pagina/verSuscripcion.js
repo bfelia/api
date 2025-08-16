@@ -115,7 +115,7 @@ router.get("/", async (req, res) => {
                     (s) => `
               <div class="card">
                 <h2>${s.nombre}</h2>
-                <p><strong>Email:</strong> ${s.s.email.split("%40").join("@")}</p>
+                <p><strong>Email:</strong> ${s.email.split("%40").join("@")}</p>
                 <p><strong>Plan:</strong> ${s.planActivo?"Plan Activo ✅":"Sin Plan❌"}</p>
               </div>
             `
