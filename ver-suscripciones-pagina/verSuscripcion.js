@@ -31,98 +31,99 @@ router.get("/", async (req, res) => {
       <head>
         <meta charset="UTF-8">
         <title>Suscripciones activas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
           body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
+            font-family: system-ui, sans-serif;
+            background: #f8f9fa;
             margin: 0;
-            padding: 20px;
+            padding: 16px;
           }
           h1 {
             text-align: center;
-            color: #333;
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
           }
           .search-box {
             display: flex;
-            justify-content: center;
             margin-bottom: 20px;
           }
           .search-box input {
-            padding: 10px;
+            flex: 1;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 8px 0 0 8px;
             outline: none;
-            width: 300px;
+            font-size: 1rem;
           }
           .search-box button {
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             background: #007bff;
             color: white;
             border-radius: 0 8px 8px 0;
             cursor: pointer;
+            font-size: 1rem;
           }
           .search-box button:hover {
             background: #0056b3;
           }
-          table {
-            width: 100%;
-            border-collapse: collapse;
+          .card {
             background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
           }
-          th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+          .card h2 {
+            font-size: 1.1rem;
+            margin: 0 0 8px;
+            color: #007bff;
           }
-          th {
-            background: #007bff;
-            color: white;
+          .card p {
+            margin: 4px 0;
+            color: #555;
+            font-size: 0.95rem;
           }
-          tr:hover {
-            background: #f1f1f1;
+          /* Versión desktop: muestra en grilla */
+          @media(min-width: 768px) {
+            .cards-container {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+              gap: 16px;
+            }
+            h1 {
+              font-size: 2rem;
+            }
           }
         </style>
       </head>
       <body>
         <h1>📋 Suscripciones activas</h1>
-        
-        <div class="search-box">
-          <form method="get" action="/ver-suscripciones-pagina">
-            <input type="text" name="search" placeholder="Buscar por email" value="${
-              search || ""
-            }" />
-            <button type="submit">Buscar</button>
-          </form>
-        </div>
-        
-        <table>
-          <thead>
-            <tr>
-              <th>Usuario</th>
-              <th>Email</th>
-              <th>Plan</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${
-              usuarios.length > 0
-                ? usuarios
-                    .map(
-                      (s) => `
-              <tr>
-                <td>${s.nombre}</td>
-                <td>${s.email.split("%40").join("@")}</td>
-                <td>${s.planActivo?"Plan Activo ✅":"Sin Plan❌"}</td>
-              </tr>
+
+        <form method="get" action="/ver-suscripciones" class="search-box">
+          <input type="text" name="search" placeholder="Buscar por nombre o email" value="${search || ""}" />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <div class="cards-container">
+          ${
+            usuarios.length > 0
+              ? usuarios
+                  .map(
+                    (s) => `
+              <div class="card">
+                <h2>${s.nombre}</h2>
+                <p><strong>Email:</strong> ${s.s.email.split("%40").join("@")}</p>
+                <p><strong>Plan:</strong> ${s.planActivo?"Plan Activo ✅":"Sin Plan❌"}</p>
+              </div>
             `
-                    )
-                    .join("")
-                : `<tr><td colspan="4" style="text-align:center;">No se encontraron usuarios</td></tr>`
-            }
-          </tbody>
-        </table>
+                  )
+                  .join("")
+              : `<p style="text-align:center;">No se encontraron usuarios</p>`
+          }
+        </div>
       </body>
       </html>
     `;
