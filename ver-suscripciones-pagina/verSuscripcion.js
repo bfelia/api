@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
     // Generamos HTML simple
     const html = `
       <h1>Suscripciones activas</h1>
-      <form method="get" action="/ver-suscripciones">
+      <form method="get" action="/">
         <input type="text" name="search" placeholder="Buscar mail de usuario" value="${search || ""}" />
         <button type="submit">Buscar</button>
       </form>
