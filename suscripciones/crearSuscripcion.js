@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
       },
       back_url: "https://beardhook.com",
       notification_url: "https://api.beardhook.com/webhook",
-      payer_email: "matiasthompson@gmail.com", // Esto se reemplaza luego por el email real 
+      payer_email: userEmail, // Esto se reemplaza luego por el email real 
       external_reference: userId,
     };
 
