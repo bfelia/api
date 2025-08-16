@@ -19,8 +19,10 @@ router.get("/", async (req, res) => {
 
     if (search) {
       usuarios = usuarios.filter(s =>
-        s.email.split("%40").join("@").toLowerCase().includes(search.toLowerCase())
+        s.email.split("%40").join("@").toLowerCase()==search.toLowerCase()
       );
+    } else {
+      usuarios = null
     }
 
     const html = `
