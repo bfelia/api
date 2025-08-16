@@ -87,7 +87,7 @@ router.get("/", async (req, res) => {
         <h1>📋 Suscripciones activas</h1>
         
         <div class="search-box">
-          <form method="get" action="/ver-suscripciones-pagina/verSuscripcion.js">
+          <form method="get" action="/ver-suscripciones-pagina">
             <input type="text" name="search" placeholder="Buscar por email" value="${
               search || ""
             }" />
@@ -112,7 +112,7 @@ router.get("/", async (req, res) => {
               <tr>
                 <td>${s.nombre}</td>
                 <td>${s.email.split("%40").join("@")}</td>
-                <td>${s.planActivo?"Plan Activo":"Sin Plan"}</td>
+                <td>${s.planActivo?"Plan Activo ✅":"Sin Plan❌"}</td>
               </tr>
             `
                     )
