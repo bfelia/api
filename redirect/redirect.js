@@ -45,7 +45,7 @@ router.get("/", (req, res) => {
     </head>
     <body>
       <header>
-        <h1><span style={color: "#DD2E44"}>B</span><span style={color: "#fff"}>e</span><span style={color: "#10609E"}>a</span><span style={color: "#fff"}>r</span><span style={color: "#DD2E44"}>d</span><span style={color: "#fff"}>H</span><span style={color: "#10609E"}>o</span><span style={color: "#fff"}>o</span><span style={color: "#DD2E44"}>k</span></h1>
+        <h1><span style="color: #DD2E44">B</span><span style="color: #fff">e</span><span style="color: #10609E">a</span><span style="color: #fff">r</span><span style="color: #DD2E44">d</span><span style="color: #fff">H</span><span style="color: #10609E">o</span><span style="color: #fff">o</span><span style="color: #DD2E44">k</span></h1>
       </header>
       <main>
         <h1>¡Gracias por tu suscripción! 🙌</h1>
