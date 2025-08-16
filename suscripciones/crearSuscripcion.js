@@ -43,6 +43,7 @@ router.post("/", async (req, res) => {
       notification_url: "https://api.beardhook.com/webhook",
       payer_email: userEmail, // Esto se reemplaza luego por el email real 
       external_reference: userId,
+      status: "pending",
     };
 
     // 3. Crear suscripción en MP
