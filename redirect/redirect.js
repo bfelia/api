@@ -45,7 +45,7 @@ router.get("/", (req, res) => {
     </head>
     <body>
       <header>
-        <img src="https://api.beardhook.com/logo.png" alt="BeardHook Logo" />
+        <img src="../logo.png" alt="BeardHook Logo" />
       </header>
       <main>
         <h1>¡Gracias por tu suscripción! 🙌</h1>
