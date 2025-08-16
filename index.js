@@ -5,6 +5,7 @@ import webhookRouter from "./suscripciones/webhook.js";
 import validarCorteRouter from "./cortes/validarCorte.js"
 import crearSuscripcionRouter from "./suscripciones/crearSuscripcion.js"
 import verSuscripcionesRouter from "./ver-suscripciones-pagina/verSuscripcion.js";
+import redirectRouter from "./redirect/redirect.js";
 dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +19,8 @@ app.use("/webhook", webhookRouter);
 app.use("/validar-corte", validarCorteRouter);
 
 app.use("/ver-suscripciones-pagina", verSuscripcionesRouter)
+
+app.use("/redirect", redirectRouter);
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);

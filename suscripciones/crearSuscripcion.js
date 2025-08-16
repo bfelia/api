@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
         start_date: new Date().toISOString(),
         end_date: new Date(new Date().setFullYear(new Date().getFullYear() + 2)).toISOString(),
       },
-      back_url: "https://beardhook.com",
+      back_url: "https://api.beardhook.com/redirect",
       notification_url: "https://api.beardhook.com/webhook",
       payer_email: userEmail, // Esto se reemplaza luego por el email real 
       external_reference: userId,
